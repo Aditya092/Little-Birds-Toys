@@ -9,40 +9,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       function clearName() {
-        if (document.getElementById('nameField').value == 'First and Last Name') {
-          document.getElementById('nameField').value = '';
-        }
+      if (document.getElementById('nameField').value == 'First and Last Name') {
+        document.getElementById('nameField').value = '';
       }
-      //function to clear the default data from the phone value input, will not erase user input text
-      function clearPhone() {
-        if (document.getElementById('phoneField').value == 'example: 732-589-9281') {
-          document.getElementById('phoneField').value = '';
-        }
+    }
+
+    function resetName() {
+      if (document.getElementById('nameField').value == '') {
+        document.getElementById('nameField').value = 'First and Last Name';
       }
-      //function to clear the default data from the email value input, will not erase user input text
-      function clearEmail() {
-        if (document.getElementById('emailField').value == 'insert your email') {
-          document.getElementById('emailField').value = '';
-        }
+    }
+
+    function clearPhone() {
+      if (document.getElementById('phoneField').value == 'example: 212-123-1234') {
+        document.getElementById('phoneField').value = '';
       }
-      //fucntion to bring back default text if name field is empty
-      function resetName() {
-        if (document.getElementById('nameField').value == '') {
-          document.getElementById('nameField').value = 'First and Last Name';
-        }
+    }
+
+    function resetPhone() {
+      if (document.getElementById('phoneField').value == '') {
+        document.getElementById('phoneField').value = 'example: 212-123-1234';
       }
-      //fucntion to bring back default text if phone field is empty
-      function resetPhone() {
-        if (document.getElementById('phoneField').value == '') {
-          document.getElementById('phoneField').value = 'example: 212-123-1234';
-        }
+    }
+
+    function clearEmail() {
+      if (document.getElementById('emailField').value == 'example: johnsmith@email.com') {
+        document.getElementById('emailField').value = '';
       }
-      //fucntion to bring back default text if email field is empty
-      function resetEmail() {
-        if (document.getElementById('emailField').value == '') {
-          document.getElementById('emailField').value = 'insert your email';
-        }
+    }
+
+    function resetEmail() {
+      if (document.getElementById('emailField').value == '') {
+        document.getElementById('emailField').value = 'example: johnsmith@email.com';
       }
+    }
     </script>
   </head>
   <body>
@@ -236,21 +236,32 @@
       <li>Our Story: Our handcrafted classic, wooden toys are designed to bring out that slowness in your home. From Planes, trains, automobiles and boats, playsets, all of our wooden toys are designed to spark imagination. The going may be a little slower, but oh the things you’ll see along the way! Since 2018, Little Bird Toys has delighted families looking for quality children’s toys. Our collection of heirloom quality products are built to stand the test of time and to be enjoyed from sibling to sibling and generation to generation. </li>
     </ul>
     <hr>
-    <h3>Create an account to save 25% off your next order</h3>
+    <main role="main">
+          <div class="contentWrapper">
+            <form action="" method="post" name="signUpForm" id="signUpForm">
+              <fieldset id="signUp">
+                <legend><b>Create an account to save 25% off your next order</b></legend>
+
+                <label for="nameField">Name:</label>
+                <input id="nameField" name="nameField" type="text" class="textfield" value="First and Last Name" onFocus="clearName();" onBlur="resetName();">
+
+                <label for="phoneField">Phone:</label>
+                <input id="phoneField" name="phoneField" type="text" class="textfield" value="example: 212-123-1234" onFocus="clearPhone();" onBlur="resetPhone();">
+
+                <label for="emailField">Email:</label>
+                <input id="emailField" name="emailField" type="text" class="textfield" value="example: johnsmith@email.com" onFocus="clearEmail();" onBlur="resetEmail();">
+
+                <input id="submit" type="submit" name="submit" value="Sign Me Up!">
+
+              </fieldset>
+            </form>
+          </div>
+        </main>
     <hr>
     <h3>Contact Us</h3>
     <ul>
       <li>732-675-9375</li>
     </ul>
-    <main role="main">
-      <div class="contentWrapper">
-        <form action="" method="post" name="signUpForm" id="signUpForm">
-          <fieldset id="signUp">
-            <legend>Sign Up For Text Alerts</legend><label for="nameField">Name:</label><input id="nameField" name="nameField" type="text" class="textfield" value="First and Last Name" onfocus="clearName();"><label for="phoneField">Phone:</label><input id="phoneField" name="phoneField" type="text" class="textfield" value="example: 212-123-1234"><input id="submit" type="submit" name="submit" value="Sign Me Up!">
-          </fieldset>
-        </form>
-      </div>
-    </main>
     </div>
     <!-- Footer -->
     <footer class="page-footer font-small blue">
