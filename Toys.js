@@ -33,3 +33,7 @@ function clearName() {
         document.getElementById('emailField').value = 'example: johnsmith@email.com';
       }
     }
+
+$(function () {
+  $("#tabs").tabs();
+});
